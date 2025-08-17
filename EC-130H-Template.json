@@ -1,0 +1,103 @@
+{
+  "templateInfo": {
+    "platformName": "EC-130H",
+    "version": 1.0,
+    "lastUpdated": "2025-08-14T19:50:00Z"
+  },
+  "flightDataFields": [
+    { "id": "callsign", "label": "Callsign", "type": "text", "required": true },
+    { "id": "commanderName", "label": "Aircraft Commander", "type": "text", "required": true },
+    { "id": "tailNumber", "label": "Tail Number", "type": "text", "required": true },
+    { "id": "date", "label": "Date", "type": "date", "required": true }
+  ],
+  "riskLogic": {
+    "flightRiskTiers": [
+      { "level": "LOW", "threshold": 0, "approver": "Aircraft Commander" },
+      { "level": "MODERATE", "threshold": 13, "approver": "Ops Sup" },
+      { "level": "HIGH", "threshold": 19, "approver": "Sq/DO or CC" },
+      { "level": "SEVERE", "threshold": 31, "approver": "ECG/CC or equivalent" }
+    ],
+    "crewRiskTiers": [
+      { "level": "LOW", "threshold": 6 },
+      { "level": "MODERATE", "threshold": 11 },
+      { "level": "HIGH", "threshold": 999 }
+    ],
+    "crewRiskOverrides": [
+      {
+        "condition": "anyFactorHigh",
+        "description": "Any factor high = personal risk level HIGH",
+        "setToLevel": "HIGH"
+      }
+    ],
+    "flightQuestionCategories": [
+        { "name": "Mission Factors", "order": 1 },
+        { "name": "Environment/Weather/Airfield Factors", "order": 2 },
+        { "name": "Aircraft Factors", "order": 3 },
+        { "name": "Aircrew Factors", "order": 4 },
+        { "name": "Aircraft Commander Discretion", "order": 5 }
+    ]
+  },
+  "flightQuestions": [
+    {
+      "category": "Mission Factors",
+      "questions": [
+          { "id": "MF01", "order": 1 , "text": "Mission", "options": [ { "text": "None", "points": 0 }, { "text": "Live Jam/ERO/ERCC/SFO", "points": 1 }, { "text": "LFE/Off-Station SFO/Multi-ship", "points": 2 }, { "text": "OCF/FCF/Combat Msn", "points": 3 } ] },
+          { "id": "MF02", "order": 2 , "text": "Intel Threat Assessment", "options": [ { "text": "None", "points": 0 }, { "text": "Low", "points": 1 }, { "text": "Medium", "points": 3 }, { "text": "High", "points": 5 } ] },
+        { "id": "MF03", "order": 3 , "text": "Airspace/Airfield/AR Track", "options": [ { "text": "Familiar", "points": 0 }, { "text": "Length<7000'/Width<110'", "points": 1 }, { "text": "Unfamiliar", "points": 2 } ] },
+        { "id": "MF04", "order": 4 , "text": "Aerial Refueling", "options": [ { "text": "None", "points": 0 }, { "text": "Routine", "points": 1 }, { "text": "Night/Formation", "points": 2 }, { "text": "Elevated EMCON", "points": 3 } ] },
+        { "id": "MF05", "order": 5 , "text": "Planned Pro Time", "options": [ { "text": "<45 Min", "points": 0 }, { "text": "45 Min - 1.5 Hours", "points": 1 }, { "text": ">1.5 Hours", "points": 2 }, { "text": "Extreme", "points": 3 } ] },
+        { "id": "MF06", "order": 6 , "text": "Crew Show/Last Land", "options": [ { "text": "Show 0515L - 0600L/Land time after 2200-2300L", "points": 1 }, { "text": "Show before 0515L/Land time after 2300L", "points": 2 } ] },
+        { "id": "MF07", "order": 7 , "text": "Climb Gradient", "options": [ { "text": "Meet", "points": 0 }, { "text": "VFR (DM or Nellis)", "points": 1 }, { "text": "Non-Std IFR/ T/O Mins", "points": 2 }, { "text": "48 ft option of VFR in lieu of IFR CG", "points": 10 } ] },
+        { "id": "MF08", "order": 8 , "text": "Low Close-In Obstacles", "options": [ { "text": "Worksheet Req", "points": 2 } ] },
+        { "id": "MF09", "order": 9 , "text": "Chem Gear", "options": [ { "text": "1 basic aircrew mbr", "points": 1 }, { "text": ">1 basic aircrew mbr", "points": 2 }, { "text": "Entire Crew (Training)", "points": 5 }, { "text": "Real World", "points": 10 } ] }
+      ]
+    },
+    {
+      "category": "Environment/Weather/Airfield Factors",
+      "questions": [
+        { "id": "EWAF01", "order": 1 , "text": "Airfield Temperature during Per-flight or SFO", "options": [ { "text": "0C-35C", "points": 0 }, { "text": ">35C (95F) or <0C (32F)", "points": 1 }, { "text": ">40C (104F) or <-15C (5F)", "points": 2 }, { "text": "< Lowest Apch Mins", "points": 3 } ] },
+        { "id": "EWAF02", "order": 2 , "text": "Takeoff Weather", "options": [ { "text": "Ceiling & Vis >= 1500/3", "points": 0 }, { "text": "Ceiling & Vis < 1500/3", "points": 1 }, { "text": "<=Circling Mins", "points": 2 }, { "text": "@Lowest Apch Mins", "points": 3 }, { "text": "<Lowest Apch Mins", "points": 5 } ] },
+        { "id": "EWAF03", "order": 3 , "text": "Scheduled Takeoff/Landing Time", "options": [ { "text": "Day", "points": 0 }, { "text": "Night", "points": 1 } ] },
+        { "id": "EWAF04", "order": 4 , "text": "Runway Condition Coces - Lowest Value", "options": [ { "text": "6(23)", "points": 1 }, { "text": "5", "points": 2 }, { "text": "4", "points": 3 }, { "text": "3(12)", "points": 3 }, { "text": "2", "points": 5 }, { "text": "1(05)", "points": 10 } ] },
+        { "id": "EWAF05", "order": 5 , "text": "Crosswind", "options": [ { "text": "<10 Kts", "points": 0 }, { "text": "10-15 Kts", "points": 1 }, { "text": "15-25 Kts", "points": 2 }, { "text": "Caution Zone", "points": 3 }, { "text": "Not Recommended", "points": 5 }   ] },
+        { "id": "EWAF06", "order": 6 , "text": "Turbulence along route of flight", "options": [ { "text": "None", "points": 0 }, { "text": "Light", "points": 1 }, { "text": "Moderate", "points": 3 } ] },
+        { "id": "EWAF07", "order": 7 , "text": "Icing along the route of flight", "options": [ { "text": "None", "points": 0 }, { "text": "Trace", "points": 1 }, { "text": "Light", "points": 2 } , { "text": "Moderate", "points": 3 } ] },
+        { "id": "EWAF08", "order": 8 , "text": "Thunderstorms along route of flight", "options": [ { "text": "None", "points": 0 }, { "text": "Isolated", "points": 1 }, { "text": "Few", "points": 2 }, { "text": "Scattered", "points": 3 }, { "text": "Numerous", "points": 5 }  ] },
+        { "id": "EWAF09", "order": 9 , "text": "Landing Weather", "options": [ { "text": "Ceiling & Vis >= 1500/3", "points": 0 }, { "text": "Ceiling & Vis < 1500/3", "points": 1 }, { "text": "<=Circling Mins", "points": 2 }, { "text": "@Lowest Apch Mins", "points": 3 }, { "text": "<Lowest Apch Mins", "points": 5 } ] },
+        { "id": "EWAF10", "order": 10 , "text": "Bird/Wildlife Hazard", "options": [ { "text": "Low", "points": 0 }, { "text": "Moderate", "points": 1 }, { "text": "Severe", "points": 10 } ] },
+        { "id": "EWAF11", "order": 11 , "text": "Other Enroute Hazards", "options": [ { "text": "Over Water", "points": 1 }, { "text": "Oceanic Or Non-Radar", "points": 3 } ] },
+        { "id": "EWAF12", "order": 12 , "text": "Language Difficulties", "options": [ { "text": "None", "points": 0 }, { "text": "Minor (Europe)", "points": 1 }, { "text": "Major (Africa/Asia)", "points": 3 } ] } 
+      ]
+    },
+    {
+      "category": "Aircraft Factors",
+      "questions": [
+        { "id": "AF01", "order": 1 , "text": "Mx Status", "options": [ { "text": "Fully qualified", "points": 0 }, { "text": "Upgrade/IQT/Conversion", "points": 1 }, { "text": "SOC", "points": 2 } ] },
+        { "id": "AF02", "order": 2 , "text": "Hot/Cold Weather Ops", "options": [ { "text": "No", "points": 0 }, { "text": "Yes", "points": 2 } ] },
+        { "id": "AF03", "order": 3 , "text": "Mx Delay", "options": [ { "text": "200+ hrs/IP on board", "points": 0 }, { "text": "Less than 200 hrs", "points": 1 } ] },
+        { "id": "AF04", "order": 4 , "text": "Step to Spare", "options": [ { "text": "≥10 hrs", "points": 0 }, { "text": "< 10 hrs", "points": 1 } ] }
+      ]
+    },
+    {
+      "category": "Aircrew Factors",
+      "questions": [
+        { "id": "CF01", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF02", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF03", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF04", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF05", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF06", "order": 1 , "text": "Health and Stress (Highest crew member)", "options": [ { "text": "Minor", "points": 0 }, { "text": "Elevated", "points": 1 }, { "text": "Serious", "points": 2 } ] },
+        { "id": "CF07", "order": 2 , "text": "Fatigue (Highest crew member)", "options": [ { "text": "Low", "points": 0 }, { "text": "Moderate", "points": 1 }, { "text": "High", "points": 2 } ] }
+      ]
+    }
+  ],
+  "crewQuestions": [
+    { "id": "CQ01", "order": 1 , "text": "Days Since Last Flight", "options": [ { "text": "<15 Days", "points": 0 },{ "text": "15-21 Days", "points": 1 }, { "text": "21-30 Days", "points": 2 }, { "text": "30+ Days", "points": 3 } ] },
+    { "id": "CQ02", "order": 2 , "text": "Notable Mission", "options": [ { "text": "None", "points": 0 }, { "text": "Recur/Upgrade/FTU", "points": 1 }, { "text": "Checkride", "points": 2 }, { "text": "No-Notice Checkride", "points": 3 } ] },
+    { "id": "CQ03", "order": 3 , "text": "Duty Day", "options": [ { "text": "<10 hrs", "points": 0 },{ "text": "10-12 hrs", "points": 1 }, { "text": "12-16 hrs", "points": 2 }, { "text": "16+ hrs", "points": 3 } ] },
+    { "id": "CQ04", "order": 4 , "text": "Sleep Last Night", "options": [ { "text": "Good", "points": 0 }, { "text": "Fair", "points": 1 }, { "text": "Poor", "points": 3 } ] },
+    { "id": "CQ05", "order": 5 , "text": "Circadium Rhythm Disruptions", "options": [ { "text": "None", "points": 0 }, { "text": "Minor", "points": 1 }, { "text": "Significant", "points": 3 } ] },
+    { "id": "CQ06", "order": 6 , "text": "Personal/Work Stress", "options": [ { "text": "0", "points": 0 }, { "text": "1", "points": 1 }, { "text": "2", "points": 2 }, { "text": "3", "points": 3 }, { "text": "4", "points": 4 } ] },
+    { "id": "CQ07", "order": 7 , "text": "Overall Health", "options": [ { "text": "0", "points": 0 }, { "text": "1", "points": 1 }, { "text": "2", "points": 2 }, { "text": "3", "points": 3 }, { "text": "4", "points": 4 } ] }
+  ]
+}
