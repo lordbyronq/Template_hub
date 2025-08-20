@@ -1,0 +1,167 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-08-20T10:00:00Z",
+  "description": "Dynamic template index for iORM application - military operational risk management templates",
+  "units": [
+    {
+      "id": "ea37b",
+      "name": "EA-37B-Template",
+      "display_name": "EA-37B Compass Call",
+      "aircraft_type": "EA-37B",
+      "branch": "Air Force",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/EA-37B-Template.json",
+      "version": "1.1",
+      "description": "Electronic warfare squadron operational risk management template",
+      "last_updated": "2025-01-15T08:30:00Z",
+      "features": [
+        "Electronic warfare missions",
+        "Crew coordination assessment",
+        "Environmental risk factors",
+        "Equipment readiness checks"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["electronic-warfare", "air-force", "tactical"]
+    },
+    {
+      "id": "ec130h",
+      "name": "EC-130H-Template",
+      "display_name": "EC-130H Compass Call",
+      "aircraft_type": "EC-130H",
+      "branch": "Air Force",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/EC-130H-Template.json",
+      "version": "2.0",
+      "description": "Airborne battlefield command and control platform ORM template",
+      "last_updated": "2025-02-01T14:20:00Z",
+      "features": [
+        "Command and control missions",
+        "Extended flight operations",
+        "Multi-crew coordination",
+        "Advanced mission planning"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["command-control", "air-force", "battlefield"]
+    },
+    {
+      "id": "f16c",
+      "name": "F-16C-Template",
+      "display_name": "F-16C Fighting Falcon",
+      "aircraft_type": "F-16C",
+      "branch": "Air Force",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/F-16C-Template.json",
+      "version": "1.3",
+      "description": "Multi-role fighter aircraft operational risk management",
+      "last_updated": "2025-01-28T11:45:00Z",
+      "features": [
+        "Fighter missions",
+        "Air-to-air combat",
+        "Air-to-ground strikes",
+        "High-g operations"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["fighter", "air-force", "combat"]
+    },
+    {
+      "id": "ah64d",
+      "name": "AH-64D-Template",
+      "display_name": "AH-64D Apache Longbow",
+      "aircraft_type": "AH-64D",
+      "branch": "Army",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/AH-64D-Template.json",
+      "version": "1.0",
+      "description": "Attack helicopter operations risk management template",
+      "last_updated": "2025-02-10T09:15:00Z",
+      "features": [
+        "Attack helicopter missions",
+        "Low-level flight operations",
+        "Combat environments",
+        "Multi-crew coordination"
+      ],
+      "status": "beta",
+      "minimum_app_version": "0.3",
+      "tags": ["helicopter", "army", "attack"]
+    },
+    {
+      "id": "uh60m",
+      "name": "UH-60M-Template",
+      "display_name": "UH-60M Black Hawk",
+      "aircraft_type": "UH-60M",
+      "branch": "Army",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/UH-60M-Template.json",
+      "version": "1.2",
+      "description": "Utility helicopter operations and transport missions",
+      "last_updated": "2025-01-22T16:30:00Z",
+      "features": [
+        "Utility operations",
+        "Personnel transport",
+        "Cargo operations",
+        "Medical evacuation"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["helicopter", "army", "utility", "medevac"]
+    },
+    {
+      "id": "fa18e",
+      "name": "F-A-18E-Template",
+      "display_name": "F/A-18E Super Hornet",
+      "aircraft_type": "F/A-18E",
+      "branch": "Navy",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/FA-18E-Template.json",
+      "version": "1.1",
+      "description": "Carrier-based fighter/attack aircraft operations",
+      "last_updated": "2025-02-05T13:20:00Z",
+      "features": [
+        "Carrier operations",
+        "Fighter missions",
+        "Strike operations",
+        "Naval aviation"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["fighter", "navy", "carrier", "strike"]
+    },
+    {
+      "id": "mv22",
+      "name": "MV-22-Template",
+      "display_name": "MV-22 Osprey",
+      "aircraft_type": "MV-22",
+      "branch": "Marines",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/MV-22-Template.json",
+      "version": "1.0",
+      "description": "Tiltrotor aircraft operations for amphibious missions",
+      "last_updated": "2025-02-12T10:45:00Z",
+      "features": [
+        "Tiltrotor operations",
+        "Amphibious missions",
+        "Vertical/short takeoff",
+        "Marine expeditionary"
+      ],
+      "status": "beta",
+      "minimum_app_version": "0.3",
+      "tags": ["tiltrotor", "marines", "amphibious"]
+    },
+    {
+      "id": "hc130j",
+      "name": "HC-130J-Template",
+      "display_name": "HC-130J Combat King II",
+      "aircraft_type": "HC-130J",
+      "branch": "Coast Guard",
+      "template_url": "https://raw.githubusercontent.com/lordbyronq/Template_hub/main/HC-130J-Template.json",
+      "version": "1.0",
+      "description": "Search and rescue operations over maritime environments",
+      "last_updated": "2025-01-30T12:00:00Z",
+      "features": [
+        "Search and rescue",
+        "Maritime operations",
+        "Long-range flights",
+        "Emergency response"
+      ],
+      "status": "active",
+      "minimum_app_version": "0.3",
+      "tags": ["search-rescue", "coast-guard", "maritime"]
+    }
+  ]
+}
