@@ -5,7 +5,7 @@
   "units": [
     {
       "id": "ea37b",
-      "name": "EA-37B-Template",
+      "name": "55 ECG",
       "display_name": "EA-37B Compass Call",
       "aircraft_type": "EA-37B",
       "branch": "Air Force",
@@ -25,7 +25,7 @@
     },
     {
       "id": "ec130h",
-      "name": "EC-130H-Template",
+      "name": "41 ECS",
       "display_name": "EC-130H Compass Call",
       "aircraft_type": "EC-130H",
       "branch": "Air Force",
